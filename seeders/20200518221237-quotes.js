@@ -1,5 +1,9 @@
 'use strict';
 
+/*A list of Kobe quotes which can be optionally seeded in the quotes table. This may be built upon to make a
+  new quote appear each day of the week as motivation.
+*/
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert('quotes', [

@@ -6,6 +6,8 @@ const Task = require('../models/task');
 const Quote = require('../models/quotes');
 require('../passport');
 
+// **CRUD API**
+
 //List all tasks
 router.get('/home', (req, res) => {
     Task.findAll({
@@ -21,52 +23,14 @@ router.get('/home', (req, res) => {
     .catch(err => console.log(err))
 });
 
-router.get('/logout', (req, res) => {
-    req.session = null;
-    req.logout();
-    res.redirect('/home');
-});
-
-
-//Link to a Kobe's page
-router.get('/home/kobe', (req, res) =>
-    res.render('mamba')
-);
-
-router.get('/', (req, res) => {
-    Quote.findAll({
-        //Returns model as it appears in the db, cutting out additional sequelize info
-        raw:true,
-    })
-    .then(quotes => {
-        //Auto Refreshing the new page after every call to show changes
-        res.render('login', {quotes})
-    })
-    .catch(err => console.log(err))
-});
-
-//Link to my personal bio
-router.get('/home/aboutme', (req, res) =>
-    res.render('dre')
-);
-
 //Add a task
 router.post('/task/add', (req, res) => {
     let {description} = req.body;
-    let errors = [];
-
-    if(errors.length > 0) {
-        res.render('add', {
-            errors,
-            description,
-        });
-    } else {
-        Task.create({
-            description,
-        })
-        .then(task => res.redirect('/home'))
-        .catch(err => console.log(err));
-    }
+    Task.create({
+        description,
+    })
+    .then(task => res.redirect('/home'))
+    .catch(err => console.log(err));
 });
 
 //Delete a task
@@ -104,9 +68,42 @@ router.patch('/task/patch/:id', (req, res) => {
     .then(task => res.redirect('/home'))
 });
 
+// **Routing Endpoints**
+
+//Link to my personal bio
+router.get('/home/aboutme', (req, res) =>
+    res.render('dre')
+);
+
+//Link to a Kobe's page
+router.get('/home/kobe', (req, res) =>
+    res.render('mamba')
+);
+
+//Future: Logout route to be used in future user authentication
+router.get('/logout', (req, res) => {
+    req.session = null;
+    req.logout();
+    res.redirect('/home');
+});
+
+//Future: show a daily quote on the login page
+router.get('/', (req, res) => {
+    Quote.findAll({
+        raw:true,
+    })
+    .then(quotes => {
+        res.render('login', {quotes})
+    })
+    .catch(err => console.log(err))
+});
+
+
 router.get('/badlogin', (req, res) => {
     res.send('Login Failed!')
 })
+
+// **OAUTH2 Endpoints** 
 
 router.get('/auth/github',
   passport.authenticate('github', { scope: [ 'user:email' ] }));
