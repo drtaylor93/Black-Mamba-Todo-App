@@ -17,9 +17,11 @@ To get the container up and runnning run:
 This will start a containerized instance of PostgreSql running on port 5432.
 
 From the app root run the following:
-`npm install`
-`sequelize db:migrate`
-`nodemon server.js`
+* `npm install`
+
+* `sequelize db:migrate`
+
+* `nodemon server.js`
 
 At this point the postgres database and the todo app should be running. The app can be reached at `localhost:54320`.
 
