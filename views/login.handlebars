@@ -1,0 +1,15 @@
+<div class="login">
+    <img src="images/2K.png" alt="Farewell" width="100%;" height="auto">
+    
+    <h1>Mamba Mentality Todo App</h1>
+
+    <p>{{#each quotes}}
+            {{this.quote}}
+        {{/each}}
+    </p>
+    <form method="GET" action="/auth/github">
+        <button type="image" class="loginBtn">
+            <img src="images/github.png">
+        </button>
+    </form>
+</div>

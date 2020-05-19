@@ -1,0 +1,226 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    padding:0;
+    margin:0;
+    height: 100%;
+    width: 100%;
+}
+
+/*Gradient insprired by official Lakers Gold colors*/
+header{
+    background-color: #552583; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom left,black,#552583);
+    color: #ffffff;
+    padding-top: 0px;
+    border-bottom: #FDB927 5px solid;
+    min-height: 70px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+header ul{
+  padding: 0;
+  margin: 0;
+}
+
+header li{
+  float: right;
+  display: inline;
+  padding: 0 20px 0 20px;
+}
+
+
+.container{
+    width: 100%;
+    margin: 0.5;
+    overflow: hidden;
+}
+
+section ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 0px 8px 12px 8px;
+    background-color: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    width: 100%;
+    list-style-type: none;
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+}
+
+.links{
+  background: none;
+  color: #eee;
+  border: none;
+  font-size: 16px;
+}
+
+
+  /* Style the close button */
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 16px 16px 16px 16px;
+    border: none;
+    background: none;
+  }
+  
+  .close:hover {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  /* Style the input */
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 40%;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  /* Style the "Add" button */
+  .addBtn {
+    padding: 10px;
+    width: 10%;
+    background: #d9d9d9;
+    color: #555;
+    
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+
+  .updateBtn {
+    background: #d9d9d9;
+    color: #555;
+    text-align: center;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+  .addBtn:hover {
+    background-color: #bbb;
+  }
+
+
+#task{
+    padding:15px;
+    color: #ffffff;
+    background-color: #FDB927;
+}
+
+#task form{
+    float: center;
+    margin-top: 15px;
+    width: 50%
+}
+
+section form {
+  padding: 5px;
+  align-self: center;
+}
+
+#boxes .box{
+    float: left;
+    width: 30%;
+    display: inline;
+}
+
+#boxes .Overview{
+    background-color: lightslategray;
+    float: left;
+    width: 33%;
+    display: inline;
+    min-height: 800px;
+}
+
+.check {
+  float: left;
+  display: inline;
+  height: 80%;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+  border: none;
+  background: none;
+  
+}
+
+.check:hover{
+  background-color: mediumseagreen;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  left: 80%;
+  width: 70%;
+  height: 40%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 18px;
+  transition: 0.4s;
+  
+}
+
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+
+
+.login h1{
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background: none;
+  color: white;
+}
+
+.loginBtn {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background: none;
+  border: thin;
+  border-color: darkgray;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 10%;
+}
+
+.login img {
+  width: 100%;
+  height: auto;
+}

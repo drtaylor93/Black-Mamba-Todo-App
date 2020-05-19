@@ -1,0 +1,78 @@
+<header>
+    <div class="container">
+        <div id="app">
+            <h1>Mamba Mentality</h1>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <form method="GET" action="/home/kobe">
+                        <button class="links" type="submit">Inspiration</button>
+                    </form>
+                </li>
+                <li>
+                    <form method="GET" action="/home/aboutme">
+                        <button class="links" type="submit">About Me</button>
+                    </form>
+                </li>    
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section id="task">
+    <div class="container">
+        <h2>What will you accomplish today?</h2>
+        <div align="center">
+            <form action="/task/add" method="POST">
+                <input type="text" name="description" id="description" class="input-box" placeholder="New Task" value={{description}}>
+                <input type="submit" class="addBtn" value="Add Task">
+            </form>
+        </div>    
+    </div>
+</section>
+
+<section id="boxes">
+    <div class="container">
+        <div class="box">
+            <h3 style="text-align:center">Completed</h3>
+            {{#each tasks}}
+                {{#if this.completed}}
+                    <ul>
+                        <li>{{this.description}}
+                            <span>
+                                <form method="POST" action="/task/delete/{{this.id}}?_method=DELETE">
+                                    <button type="submit" class="close">X</button>
+                                </form>
+                            </span>
+                        </li>
+                    </ul> 
+                {{/if}}   
+            {{/each}}
+        </div>
+        <div class="box">
+            <h3 style="text-align:center;">Today's List</h3>
+            {{#each tasks}}
+                {{#unless this.completed}}
+                <ul>
+                    <li>
+                        <form method="POST" action="/task/patch/{{this.id}}?_method=PATCH">
+                            <button type="submit" class="check">&#10004;</button>                    
+                        </form>
+                        <button class="accordion">{{this.description}}</button>            
+                        <div class="panel">
+                            <form method="POST" action="/task/delete/{{this.id}}?_method=DELETE">
+                                <button type="submit" class="close">X</button>
+                            </form>
+                            <form method="POST" action="/task/patch/{{this.id}}?_method=PATCH">
+                                <input type="text" name="description" id="description" class="input-box" placeholder="Update Task" value="Update Task">
+                                <input type="submit" class="updateBtn" value="Update">
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+                {{/unless}}
+            {{/each}}
+        </div>
+    </div>
+</section>

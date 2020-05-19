@@ -1,0 +1,11 @@
+version: "3.1"
+services:
+  store:
+    environment:
+        POSTGRES_USER: kobe
+        POSTGRES_PASSWORD: lakers
+        POSTGRES_DB: postgres
+    image: "postgres:11"
+    container_name: "bryant"
+    ports:
+      - "5432:5432"
