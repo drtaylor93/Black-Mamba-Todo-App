@@ -37,7 +37,6 @@ app.use(bodyParser.json());
 
 //API routes
 app.use('/', require('./routes/routes'));
-
 app.use(express.static('css'))
 const PORT = process.env.PORT || 54320;
  

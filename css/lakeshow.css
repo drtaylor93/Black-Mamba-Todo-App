@@ -65,8 +65,6 @@ h2 {
   font-size: 16px;
 }
 
-
-  /* Style the close button */
   .close {
     position: absolute;
     right: 0;
@@ -81,7 +79,6 @@ h2 {
     color: white;
   }
   
-  /* Style the input */
   input {
     margin: 0;
     border: none;
@@ -91,10 +88,10 @@ h2 {
     font-size: 16px;
   }
   
-  /* Style the "Add" button */
+
   .addBtn {
     padding: 10px;
-    width: 10%;
+    width: 20%;
     background: #d9d9d9;
     color: #555;
     
@@ -133,7 +130,7 @@ h2 {
 }
 
 section form {
-  padding: 5px;
+  padding-top: 0px;
   align-self: center;
 }
 
@@ -141,14 +138,6 @@ section form {
     float: left;
     width: 30%;
     display: inline;
-}
-
-#boxes .Overview{
-    background-color: lightslategray;
-    float: left;
-    width: 33%;
-    display: inline;
-    min-height: 800px;
 }
 
 .check {
@@ -194,8 +183,6 @@ section form {
   transition: max-height 0.2s ease-out;
 }
 
-
-
 .login h1{
   position: absolute;
   top: 5%;
@@ -207,17 +194,15 @@ section form {
 }
 
 .loginBtn {
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  position: relative;
+  float: right;
   background: none;
   border: thin;
   border-color: darkgray;
   border-radius: 12px;
   cursor: pointer;
-  width: 10%;
+  padding: 0 18px;
+  width: 15%;
 }
 
 .login img {

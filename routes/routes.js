@@ -6,14 +6,6 @@ const Task = require('../models/task');
 const Quote = require('../models/quotes');
 require('../passport');
 
-const isLoggedIn = (req, res, next) => {
-    if (req.user){
-        next();
-    } else {
-        res.sendStatus(401);
-    }
-};
-
 //List all tasks
 router.get('/home', (req, res) => {
     Task.findAll({
@@ -55,7 +47,7 @@ router.get('/', (req, res) => {
 
 //Link to my personal bio
 router.get('/home/aboutme', (req, res) =>
-    res.render('me')
+    res.render('dre')
 );
 
 //Add a task
