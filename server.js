@@ -20,10 +20,10 @@ app.use(cookie({
 
 
 
-const db = require('./src/config/database');
-db.authenticate()
-  .then(() => console.log('Database connected...'))
-  .catch(err => console.log('Error ' + err))
+// const db = require('./src/config/database');
+// db.authenticate()
+//   .then(() => console.log('Database connected...'))
+//   .catch(err => console.log('Error ' + err))
 
 //Using handlebars js as template of choice
 app.engine('handlebars', exphbs({ 
